@@ -10,6 +10,36 @@
 		<title>Региональный координационный центр Республики Мордовия</title>
 	</head>
 	<body>
+		<!-- Search screen -->
+		<div class="search_screen">
+			<header class="header search">
+				<div class="container">
+					<nav class="nav">
+						<div class="header_search_left">
+							<img
+								src="./assets/images/icons/search/search-green.svg"
+								alt="Поиск"
+								class="search_button_img search_left_icon"
+								draggable="false"
+							/>
+							<input
+								type="text"
+								placeholder="Поиск по сайту"
+								class="header_search_input"
+							/>
+						</div>
+						<button type="button" class="nav_search_button" id="close-search">
+							<img
+								src="./assets/images/icons/close-black.svg"
+								alt="Закрыть"
+								class="search_button_img"
+								draggable="false"
+							/>
+						</button>
+					</nav>
+				</div>
+			</header>
+		</div>
 		<!-- Header -->
 		<header class="header">
 			<div class="container">
@@ -23,22 +53,45 @@
 								draggable="false"
 							/>
 						</a>
-						<p class="logo_secondary_text">
-							Региональный координационный центр Республики Мордовия
-						</p>
 					</div>
 					<ul class="nav_list">
-						<li class="nav_item"><a href="#about-us">О нас</a></li>
+						<li class="nav_item"><a href="/">Главная</a></li>
+						<li class="nav_item">
+							<a href="#about-us">О нас</a>
+							<ul class="nav_sublist">
+								<li><a href="#">Документы</a></li>
+								<li><a href="#">Компетенции</a></li>
+								<li><a href="#">Другие документы</a></li>
+							</ul>
+						</li>
 						<li class="nav_item"><a href="#news">Новости</a></li>
-						<li class="nav_item"><a href="#contacts">Контакты</a></li>
+						<li class="nav_item">
+							<a href="#contacts">Контакты</a>
+						</li>
+						<li class="nav_item">
+							<a href="#contacts">Наши проекты</a>
+							<ul class="nav_sublist">
+								<li><a href="#">Региональный чемпионат</a></li>
+								<li><a href="#">Отборочный чемпионат</a></li>
+								<li><a href="#">Демонстрационный экзамен</a></li>
+							</ul>
+						</li>
 					</ul>
+					<button type="button" class="nav_search_button" id="open-search">
+						<img
+							src="./assets/images/icons/search/search-black.svg"
+							alt="Поиск"
+							class="search_button_img"
+							draggable="false"
+						/>
+					</button>
 				</nav>
 			</div>
 		</header>
 		<!-- Header -->
 		<!-- Block 1 -->
 		<div class="block1" id="block1">
-			<div class="container container-mini flex aic jcsb">
+			<div class="container-mini aic jcsb container flex">
 				<img
 					src="./assets/images/block1_bg.svg"
 					alt="Фон"
@@ -56,7 +109,7 @@
 		</div>
 		<!-- Block 1 -->
 		<!-- About the championship -->
-		<div class="block about_championship" id="about_championship">
+		<div class="about_championship block" id="about_championship">
 			<div class="container">
 				<h2 class="block_title">О ЧЕМПИОНАТЕ</h2>
 				<!-- Cards -->
@@ -135,7 +188,7 @@
 			<hr class="hr_divider" />
 		</div>
 		<!-- About us -->
-		<div class="block about_us" id="about-us">
+		<div class="about_us block" id="about-us">
 			<div class="container">
 				<h2 class="block_title">О нас</h2>
 				<div class="default_text">
@@ -190,7 +243,7 @@
 		</div>
 
 		<!-- News -->
-		<div class="block news" id="news">
+		<div class="news block" id="news">
 			<div class="container">
 				<h2 class="block_title">Новости</h2>
 				<!-- Cards -->
@@ -269,7 +322,7 @@
 			<hr class="hr_divider" />
 		</div>
 		<!-- Competencies -->
-		<div class="block competencies" id="competencies">
+		<div class="competencies block" id="competencies">
 			<div class="container">
 				<h2 class="block_title">Компетенции</h2>
 				<div class="default_text">
@@ -398,7 +451,7 @@
 			<hr class="hr_divider" />
 		</div>
 		<!-- Documents -->
-		<div class="block documents" id="documents">
+		<div class="documents block" id="documents">
 			<div class="container">
 				<h2 class="block_title">Документы</h2>
 				<!-- Documents cards -->
@@ -422,40 +475,84 @@
 						>https://pro.firpo.ru/media/brendbuk/</a
 					>
 				</div>
-				<div class="gerb_block">
-					<img
-						src="./assets/images/gerb_rf.webp"
-						alt="Герб РФ"
-						class="gerb_img"
-						draggable="false"
-					/>
-				</div>
 			</div>
 		</div>
 		<!-- Documents -->
 
-		<div class="container">
-			<hr class="hr_divider" />
-		</div>
-
-		<!-- Contacts -->
-		<div class="block contacts green_gradient" id="contacts">
+		<!-- Contacts footer -->
+		<footer class="contacts block footer" id="contacts">
 			<div class="container">
-				<h2 class="block_title">Контакты</h2>
+				<div class="contacts_column">
+					<div class="contacts_string">
+						<img
+							src="./assets/images/icons/phone-black.svg"
+							alt="Телефон"
+							class="contacts_icon"
+							draggable="false"
+						/>
+						<a
+							href="tel:+79875707461"
+							aria-label="Телефон"
+							class="contacts_link"
+							>+7 (987) 570-74-61</a
+						>
+						<a
+							href="tel:+79272742011"
+							aria-label="Телефон"
+							class="contacts_link"
+							>+7 (927) 274-20-11
+						</a>
+					</div>
+					<hr class="black_divider" />
+					<div class="contacts_string">
+						<img
+							src="./assets/images/icons/mail-black.svg"
+							alt="Почта"
+							class="contacts_icon"
+							draggable="false"
+						/>
+						<a
+							href="mailto:wsrmordovia@yandex.ru"
+							aria-label="Почта"
+							class="contacts_link"
+							>wsrmordovia@yandex.ru</a
+						>
+						<a
+							href="mailto:info@copp13.ru"
+							aria-label="Почта"
+							class="contacts_link"
+							>info@copp13.ru
+						</a>
+					</div>
+					<br />
+				</div>
+				<hr class="green_divider" />
+				<br />
 				<div class="default_text">
 					<p>
 						<b>
 							Руководитель регионального оператора Всероссийского чемпионатного
 							движения по профессиональному мастерству в Республике Мордовия,
-							Спицина Ольга Викторовна, +79272742011, info@copp13.ru
+							Спицина Ольга Викторовна,
+							<a href="tel:+79272742011" class="contacts_link"
+								>+7 (927) 274-20-11</a
+							>,
+							<a href="mailto:info@copp13.ru" class="contacts_link"
+								>info@copp13.ru</a
+							>
 						</b>
 					</p>
 					<br />
 					<p>
 						<b>
 							Руководитель регионального координационного центра Республики
-							Мордовия, Жигульский Андрей Александрович, +7 (8342) 75-45-10,
-							andrey-zhigulski@mail.ru
+							Мордовия, Жигульский Андрей Александрович,
+							<a href="tel:+78342754510" class="contacts_link"
+								>+7 (8342) 75-45-10</a
+							>,
+							<a href="mailto:andrey-zhigulski@mail.ru" class="contacts_link"
+								>andrey-zhigulski@mail.ru</a
+							>
 						</b>
 					</p>
 					<br />
@@ -463,48 +560,44 @@
 						<b>
 							Заместитель руководителя регионального координационного центра
 							Республики Мордовия, Рузанкина Светлана Александровна ,
-							+79875707461, wsrmordovia@yandex.ru
+							<a href="tel:+79875707461" class="contacts_link"
+								>+7 (987) 570-74-61</a
+							>,
+							<a href="mailto:wsrmordovia@yandex.ru" class="contacts_link"
+								>wsrmordovia@yandex.ru</a
+							>
 						</b>
 					</p>
 				</div>
 				<br />
+				<hr class="green_divider" />
 				<br />
-				<div class="double_contacts">
-					<div class="contacts_column">
-						<p class="contacts_column_text">Телефон</p>
-						<br />
-						<a href="tel:+79272742011" class="contacts_column_text link"
-							>+79272742011</a
-						>
-						<a href="tel:+79875707461" class="contacts_column_text link"
-							>+79875707461</a
-						>
-					</div>
-					<div class="contacts_column">
-						<p class="contacts_column_text">Почта</p>
-						<br />
-						<a href="mailto:info@copp13.ru" class="contacts_column_text link"
-							>info@copp13.ru</a
-						>
-						<a
-							href="mailto:wsrmordovia@yandex.ru"
-							class="contacts_column_text link"
-							>wsrmordovia@yandex.ru</a
-						>
-					</div>
-				</div>
-				<br />
-				<br />
-				<div class="default_text">
+				<div class="contacts_string">
+					<img
+						src="./assets/images/icons/gps-black.svg"
+						alt="Местоположение"
+						class="contacts_icon"
+						draggable="false"
+					/>
 					<p>
-						<b
-							>Россия, Республика Мордовия, город Саранск, ул.Транспортная 11;
-							ул. Солнечная, 25</b
+						<a
+							href="https://yandex.ru/maps/-/CDFLbKoe"
+							target="_blank"
+							class="contacts_link"
+						>
+							Россия, Республика Мордовия, город Саранск, ул.Транспортная 11;
+						</a>
+						<a
+							href="https://yandex.ru/maps/-/CDFLbOzg"
+							target="_blank"
+							class="contacts_link"
+							>ул. Солнечная, 25</a
 						>
 					</p>
 				</div>
 			</div>
-		</div>
+		</footer>
 		<!-- Contacts -->
+		<script src="./assets/js/search.js"></script>
 	</body>
 </html>

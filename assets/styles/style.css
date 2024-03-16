@@ -84,6 +84,11 @@ html {
   scroll-padding-top: 8.75rem;
 }
 
+body {
+  background-image: url("../images/bg-pattern.svg");
+  background-size: cover;
+}
+
 .container {
   max-width: 76.25rem;
   padding: 0 1.25rem;
@@ -105,12 +110,20 @@ html {
 
 .header {
   width: 100%;
-  padding: 2.1875rem 0;
+  padding: 1.625rem 0;
+  max-height: 9.375rem;
   background-color: #9ee378;
   position: -webkit-sticky;
   position: fixed;
   top: 0;
-  z-index: 100;
+  z-index: 50;
+}
+.header.search {
+  transition: 0.3s ease-in-out;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  transform: translate(0, -100%);
 }
 
 .nav {
@@ -133,13 +146,6 @@ html {
   cursor: pointer;
 }
 
-.logo_secondary_text {
-  font-size: 1.5rem;
-  color: #000000;
-  font-weight: 600;
-  max-width: 24.375rem;
-}
-
 .nav_button_icon {
   max-width: 1.125rem;
   width: 100%;
@@ -153,24 +159,107 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2.5rem;
+  gap: 1.25rem;
 }
 
+.nav_item {
+  position: relative;
+}
 .nav_item a {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #000000;
-  white-space: nowrap;
+  padding: 0.625rem;
+  color: #2f2f2f;
   transition: 0.1s;
+  text-wrap: nowrap;
 }
 .nav_item a:hover {
   opacity: 0.6;
+}
+.nav_item:hover .nav_sublist {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav_sublist {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.625rem;
+  padding: 0.9375rem;
+  background-color: #9ee378;
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.25);
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0.625rem);
+}
+
+.nav_search_button {
+  bottom: 0;
+  outline: none;
+  background: transparent;
+  max-width: 2.25rem;
+  width: 100%;
+  transition: opacity 0.1s;
+}
+.nav_search_button img {
+  width: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+.nav_search_button:hover {
+  opacity: 0.7;
+}
+
+.search_screen {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s;
+}
+.search_screen.open {
+  opacity: 1;
+  visibility: visible;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.search_screen.open .header.search {
+  transform: translate(0);
+}
+
+.header_search_left {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.search_left_icon {
+  border-right: 2px solid #d9d9d9;
+  padding-right: 1.875rem;
+}
+
+.header_search_input {
+  padding: 0.625rem;
+  margin-left: 1.875rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 0;
+  outline: none;
+  width: 100%;
 }
 
 .block1 {
   width: 100%;
   position: relative;
   padding-top: 8.75rem;
+  background-color: #ffffff;
 }
 
 .block1_bg {
@@ -280,6 +369,18 @@ html {
   height: 0.75rem;
 }
 
+.black_divider {
+  height: 0.1875rem;
+  background-color: #121212;
+  width: 100%;
+}
+
+.green_divider {
+  background-color: #43bc00;
+  width: 100%;
+  height: 1px;
+}
+
 .default_text {
   font-size: 1.5rem;
   font-weight: 400;
@@ -292,6 +393,12 @@ html {
 .default_text b {
   font-weight: 600;
   font-size: 1.5rem;
+}
+.default_text.fz-20 p {
+  font-size: 1.25rem;
+}
+.default_text.fz-20 b {
+  font-size: 1.25rem;
 }
 
 .documents_cards {
@@ -337,6 +444,10 @@ html {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(158, 227, 120, 0.2) 87.6%);
 }
 
+.footer {
+  background-color: #9ee378;
+}
+
 .double_contacts {
   display: flex;
   align-items: flex-start;
@@ -344,20 +455,23 @@ html {
 }
 
 .contacts_column {
-  width: 50%;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
+  gap: 0.625rem;
 }
 
-.contacts_column_text {
+.contacts_string {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.contacts_link {
   font-size: 1.5rem;
   color: #000000;
   font-weight: 600;
   text-decoration: none;
 }
-.contacts_column_text.link {
-  transition: 0.1s;
-}
-.contacts_column_text.link:hover {
-  opacity: 0.6;
+.contacts_link:hover {
+  text-decoration: underline;
 }
