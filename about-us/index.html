@@ -85,11 +85,10 @@
 					<ul class="nav_list">
 						<li class="nav_item"><a href="/">Главная</a></li>
 						<li class="nav_item active">
-							<a href="/abous-us/">О нас</a>
+							<a href="/about-us/">О нас</a>
 							<ul class="nav_sublist">
-								<li><a href="/abous-us/documents/">Документы</a></li>
-								<li><a href="/abous-us/competenties/">Компетенции</a></li>
-								<li><a href="#">Другие документы</a></li>
+								<li><a href="/about-us/documents/">Документы</a></li>
+								<li><a href="/about-us/competenties/">Компетенции</a></li>
 							</ul>
 						</li>
 						<li class="nav_item"><a href="/news/">Новости</a></li>
@@ -100,19 +99,26 @@
 							<a href="/our-projects/">Наши проекты</a>
 							<ul class="nav_sublist">
 								<li><a href="#">Региональный чемпионат</a></li>
-								<li><a href="#">Отборочный чемпионат</a></li>
+								<li><a href="#">Отборочные соревнования</a></li>
 								<li><a href="#">Демонстрационный экзамен</a></li>
 							</ul>
 						</li>
 					</ul>
-					<button type="button" class="nav_search_button" id="open-search">
-						<img
-							src="/assets/images/icons/search/search-black.svg"
-							alt="Поиск"
-							class="search_button_img"
-							draggable="false"
-						/>
-					</button>
+					<div class="nav_buttons">
+						<button type="button" class="nav_search_button" id="open-search">
+							<img
+								src="/assets/images/icons/search/search-black.svg"
+								alt="Поиск"
+								class="search_button_img"
+								draggable="false"
+							/>
+						</button>
+						<button type="button" class="burger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+					</div>
 				</nav>
 			</div>
 		</header>
@@ -120,7 +126,7 @@
 
 		<!-- Block 1 -->
 		<div class="block1" id="block1">
-			<div class="container-mini aic jcsb container flex">
+			<div class="container-mini aic jcsb container flex block1-container">
 				<img
 					src="/assets/images/block1_bg.svg"
 					alt="Фон"
@@ -146,7 +152,11 @@
 				<div class="block_cards">
 					<!-- Card start -->
 					<div class="about_card">
-						<img src="#" alt="Картинка" class="about_card_img" />
+						<img
+							src="https://placehold.co/260x200/EEE/31343C"
+							alt="Картинка"
+							class="about_card_img"
+						/>
 						<div class="about_card_info">
 							<p class="about_card_info_title">
 								В чемпионате соревнуются студенты среднего профессионального
@@ -168,7 +178,11 @@
 					<!-- Card end -->
 					<!-- Card start -->
 					<div class="about_card">
-						<img src="#" alt="Картинка" class="about_card_img" />
+						<img
+							src="https://placehold.co/260x200/EEE/31343C"
+							alt="Картинка"
+							class="about_card_img"
+						/>
 						<div class="about_card_info">
 							<p class="about_card_info_title">
 								В чемпионате соревнуются студенты среднего профессионального
@@ -190,7 +204,11 @@
 					<!-- Card end -->
 					<!-- Card start -->
 					<div class="about_card">
-						<img src="#" alt="Картинка" class="about_card_img" />
+						<img
+							src="https://placehold.co/260x200/EEE/31343C"
+							alt="Картинка"
+							class="about_card_img"
+						/>
 						<div class="about_card_info">
 							<p class="about_card_info_title">
 								В чемпионате соревнуются студенты среднего профессионального
@@ -351,7 +369,7 @@
 					<p>
 						<b>
 							Заместитель руководителя регионального координационного центра
-							Республики Мордовия, Рузанкина Светлана Александровна ,
+							Республики Мордовия, Рузанкина Светлана Александровна,
 							<a href="tel:+79875707461" class="contacts_link"
 								>+7 (987) 570-74-61</a
 							>,
@@ -391,5 +409,6 @@
 		</footer>
 		<!-- Footer end -->
 		<script src="/assets/js/search.js"></script>
+		<script src="/assets/js/burger.js"></script>
 	</body>
 </html>

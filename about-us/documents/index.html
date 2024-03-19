@@ -85,15 +85,12 @@
 					<ul class="nav_list">
 						<li class="nav_item"><a href="/">Главная</a></li>
 						<li class="nav_item active">
-							<a href="/abous-us/">О нас</a>
+							<a href="/about-us/">О нас</a>
 							<ul class="nav_sublist">
-								<li>
-									<a href="/abous-us/documents/">Документы</a>
-								</li>
 								<li class="active">
-									<a href="/abous-us/competenties/">Компетенции</a>
+									<a href="/about-us/documents/">Документы</a>
 								</li>
-								<li><a href="#">Другие документы</a></li>
+								<li><a href="/about-us/competenties/">Компетенции</a></li>
 							</ul>
 						</li>
 						<li class="nav_item"><a href="/news/">Новости</a></li>
@@ -104,19 +101,26 @@
 							<a href="/our-projects/">Наши проекты</a>
 							<ul class="nav_sublist">
 								<li><a href="#">Региональный чемпионат</a></li>
-								<li><a href="#">Отборочный чемпионат</a></li>
+								<li><a href="#">Отборочные соревнования</a></li>
 								<li><a href="#">Демонстрационный экзамен</a></li>
 							</ul>
 						</li>
 					</ul>
-					<button type="button" class="nav_search_button" id="open-search">
-						<img
-							src="/assets/images/icons/search/search-black.svg"
-							alt="Поиск"
-							class="search_button_img"
-							draggable="false"
-						/>
-					</button>
+					<div class="nav_buttons">
+						<button type="button" class="nav_search_button" id="open-search">
+							<img
+								src="/assets/images/icons/search/search-black.svg"
+								alt="Поиск"
+								class="search_button_img"
+								draggable="false"
+							/>
+						</button>
+						<button type="button" class="burger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+					</div>
 				</nav>
 			</div>
 		</header>
@@ -124,7 +128,7 @@
 
 		<!-- Block 1 -->
 		<div class="block1" id="block1">
-			<div class="container-mini aic jcsb container flex">
+			<div class="container-mini aic jcsb container flex block1-container">
 				<img
 					src="/assets/images/block1_bg.svg"
 					alt="Фон"
@@ -142,132 +146,34 @@
 		</div>
 		<!-- Block 1 end -->
 
-		<!-- Competencies -->
-		<div class="competencies block" id="competencies">
+		<!-- Documents -->
+		<div class="documents block" id="documents">
 			<div class="container">
-				<h2 class="block_title">Компетенции</h2>
-				<div class="default_text">
-					<p>
-						<b> Компетенция: "Производство молочной продукции" </b>
-					</p>
-					<p>
-						<b> Компетенция: "Бухгалтерский учет" </b>
-					</p>
-					<p>
-						<b>
-							Компетенция: "Эксплуатация и обслуживание многоквартирного дома"
-						</b>
-					</p>
-					<p>
-						<b> Компетенция: "Управление локомотивом" </b>
-					</p>
-					<p>
-						<b> Компетенция: "Программные решения для бизнеса" </b>
-					</p>
-					<p>
-						<b> Компетенция: "Ветеринария "(Юниоры) </b>
-					</p>
-					<p>
-						<b>
-							Компетенция: "Технологии информационного моделирования
-							BIM"(Юниоры)
-						</b>
-					</p>
-					<p>
-						<b> Компетенция: "Ветеринария" </b>
-					</p>
-					<p>
-						<b> Компетенция: "Веб-технологии" </b>
-					</p>
-					<p>
-						<b> Компетенция: "Дошкольное воспитание" </b>
-					</p>
-					<p>
-						<b> Компетенция: "Эксплуатация сельскохозяйственных машин" </b>
-					</p>
-					<p>
-						<b> Компетенция: "Кирпичная кладка" </b>
-					</p>
-					<p>
-						<b> Компетенция: "Технологии физического развития" </b>
-					</p>
-					<p>
-						<b> Компетенция: "Геопространственные технологии" </b>
-					</p>
-					<p>
-						<b> Компетенция: "Туризм" </b>
-					</p>
-					<p>
-						<b> Компетенция: "Ресторанный сервис" </b>
-					</p>
-					<p>
-						<b> Компетенция: "Дошкольное воспитание"(Юниоры) </b>
-					</p>
-					<p>
-						<b> Компетенция: "Обслуживание тяжёлой техники" </b>
-					</p>
-					<p>
-						<b>
-							Компетенция: "Специалист по тестированию игрового программного
-							обеспечения"
-						</b>
-					</p>
-					<p>
-						<b> Компетенция: "Электромонтаж" </b>
-					</p>
-					<p>
-						<b> Компетенция: "Медицинский и социальный уход" </b>
-					</p>
-					<p>
-						<b> Компетенция: "Графический дизайн" </b>
-					</p>
-					<p>
-						<b> Компетенция: "Структурированные кабельные системы"(Юниоры) </b>
-					</p>
-					<p>
-						<b> Компетенция: "Структурированные кабельные системы" </b>
-					</p>
-					<p>
-						<b> Компетенция: "Электроника" </b>
-					</p>
-					<p>
-						<b>
-							Компетенция: "Разработка виртуальной и дополненной реальности"
-						</b>
-					</p>
-					<p>
-						<b>
-							Компетенция: "Разработка компьютерных игр и мультимедийных
-							приложений"
-						</b>
-					</p>
-					<p>
-						<b>
-							Компетенция: "Холодильная техника и системы кондиционирования"
-						</b>
-					</p>
-					<p>
-						<b> Компетенция: "Архитектура" </b>
-					</p>
-					<p>
-						<b> Компетенция: "Реверсивный инжиниринг" </b>
-					</p>
-					<p>
-						<b> Компетенция: "Преподавание в младших классах" </b>
-					</p>
-					<p>
-						<b> Компетенция: "Парикмахерское искусство" </b>
-					</p>
-					<p>
-						<b> Компетенция: "Производство мясных продуктов" </b>
-					</p>
-					<p>
-						<b> Компетенция: "Социальная работа" </b>
-					</p>
+				<h2 class="block_title">Документы</h2>
+				<!-- Documents cards -->
+
+				<div class="documents_cards">
+					<a href="#" class="document_card">Сообщество ГЭ 2024.docx</a>
+					<a href="#" class="document_card">Компетенции 2024г.docx</a>
+					<a href="#" class="document_card"
+						>Инструкция по работе с ЦСО для ГЭ.pdf</a
+					>
+					<a href="#" class="document_card"
+						>График обучения экспертов РЭЧ 2024.xlsx</a
+					>
+					<a href="https://pro.firpo.ru/o-nas/dokumenty/" class="document_card"
+						>https://pro.firpo.ru/o-nas/dokumenty/</a
+					>
+					<a href="https://pro.firpo.ru/kompetentsi/" class="document_card"
+						>https://pro.firpo.ru/kompetentsi/</a
+					>
+					<a href="https://pro.firpo.ru/media/brendbuk/" class="document_card"
+						>https://pro.firpo.ru/media/brendbuk/</a
+					>
 				</div>
 			</div>
 		</div>
-		<!-- Competencies end -->
+		<!-- Documents end -->
 
 		<!--  Footer -->
 		<footer class="contacts block footer" id="contacts">
@@ -349,7 +255,7 @@
 					<p>
 						<b>
 							Заместитель руководителя регионального координационного центра
-							Республики Мордовия, Рузанкина Светлана Александровна ,
+							Республики Мордовия, Рузанкина Светлана Александровна,
 							<a href="tel:+79875707461" class="contacts_link"
 								>+7 (987) 570-74-61</a
 							>,
@@ -390,5 +296,6 @@
 		<!-- Footer end -->
 
 		<script src="/assets/js/search.js"></script>
+		<script src="/assets/js/burger.js"></script>
 	</body>
 </html>

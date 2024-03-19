@@ -2,6 +2,9 @@
 @import './nullstyle';
 @import './vars';
 
+$burger-active-width: $max-1000;
+$header-height: rem(120);
+
 * {
 	font-family: 'Roboto Flex', sans-serif;
 	font-size: 1rem;
@@ -16,6 +19,29 @@ body {
 	background-image: url('/assets/images/bg-pattern.svg');
 	background-size: cover;
 }
+
+body.overflow {
+	overflow: hidden;
+}
+body.blur {
+	position: relative;
+	overflow: hidden;
+	transition: 0.2s;
+
+	&:before {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 20;
+		width: 100%;
+		height: 100%;
+		background: rgba(255, 255, 255, 0.3);
+		-webkit-backdrop-filter: blur(rem(4));
+		backdrop-filter: blur(rem(4));
+	}
+}
+
 .container {
 	max-width: rem(1220);
 	padding: 0 rem(20);
@@ -63,6 +89,7 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
+	position: relative;
 }
 .nav_logo {
 	display: flex;
@@ -82,11 +109,35 @@ body {
 .nav_button_text {
 	color: $white;
 }
+.nav_buttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: rem(20);
+}
 .nav_list {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: rem(20);
+	transition: transform 0.3s ease-in-out;
+
+	@media screen and (max-width: $burger-active-width) {
+		flex-direction: column;
+		align-items: flex-end;
+		justify-content: flex-start;
+		position: absolute;
+		top: $header-height;
+		right: 0;
+		transform: translate(200%, 0);
+		background-color: $green;
+		width: calc(100% + rem(40));
+		padding: rem(20);
+
+		&.active {
+			transform: translate(rem(20), 0);
+		}
+	}
 }
 .nav_item {
 	position: relative;
@@ -124,6 +175,71 @@ body {
 		}
 	}
 }
+.burger {
+	position: relative;
+	min-width: rem(26);
+	height: rem(18);
+	cursor: pointer;
+	transition: 0.2s ease-in-out;
+	background: transparent;
+	outline: none;
+	border: 0;
+
+	@media (min-width: $burger-active-width) {
+		display: none;
+	}
+
+	& span {
+		border-radius: 50px;
+	}
+
+	& span:first-child {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: rem(26);
+		height: rem(3);
+		background-color: $black;
+		border-radius: rem(50);
+		transition: 0.2s ease-in-out;
+	}
+	& span:nth-child(2n) {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translate(0, -50%);
+		width: rem(26);
+		height: rem(3);
+		background-color: $black;
+		border-radius: rem(50);
+		transition: 0.2s ease-in-out;
+	}
+
+	& span:last-child {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: rem(26);
+		height: rem(3);
+		background-color: $black;
+		border-radius: rem(50);
+		transition: 0.2s ease-in-out;
+	}
+
+	&.active {
+		& span:first-child {
+			top: 50%;
+			transform: rotate(-45deg) translate(0, -50%);
+		}
+		& span:nth-child(2n) {
+			opacity: 0;
+		}
+		& span:last-child {
+			bottom: 50%;
+			transform: rotate(45deg) translate(0%, 50%);
+		}
+	}
+}
 .nav_sublist {
 	display: flex;
 	flex-direction: column;
@@ -138,6 +254,11 @@ body {
 	opacity: 0;
 	visibility: hidden;
 	transform: translate(0, rem(10));
+
+	@media screen and (max-width: $burger-active-width) {
+		left: auto;
+		right: 0;
+	}
 }
 .nav_search_button {
 	bottom: 0;
@@ -236,6 +357,18 @@ body {
 	text-transform: uppercase;
 	letter-spacing: rem(20);
 
+	@media screen and (max-width: $max-700) {
+		font-size: rem(80);
+	}
+	@media screen and (max-width: $max-500) {
+		font-size: rem(50);
+		letter-spacing: rem(16);
+	}
+	@media screen and (max-width: $max-400) {
+		font-size: rem(36);
+		letter-spacing: rem(14);
+	}
+
 	& span {
 		font-size: rem(80);
 		white-space: nowrap;
@@ -243,9 +376,25 @@ body {
 		line-height: 1;
 		letter-spacing: 0;
 		text-align: center;
+
+		@media screen and (max-width: $max-700) {
+			font-size: rem(58);
+		}
+		@media screen and (max-width: $max-500) {
+			font-size: rem(40);
+		}
+		@media screen and (max-width: $max-400) {
+			font-size: rem(30);
+		}
 	}
 }
-
+.block1-container {
+	@media screen and (max-width: $max-1200) {
+		flex-direction: column-reverse;
+		padding: rem(30) rem(20);
+		padding-bottom: 0;
+	}
+}
 // About the championship
 
 .block {
@@ -268,18 +417,30 @@ body {
 	display: flex;
 	align-items: flex-start;
 	gap: rem(90);
+
+	@media screen and (max-width: $max-900) {
+		gap: rem(60);
+	}
+	@media screen and (max-width: $max-700) {
+		flex-direction: column;
+		gap: rem(30);
+	}
 }
 .about_card_img {
 	max-width: rem(260);
 	width: 100%;
 	-o-object-fit: cover;
 	object-fit: cover;
-	max-height: rem(200);
-	// TODO: убрать
-	height: rem(200);
-	// TODO: вернуть
-	// height: 100%;
+	min-height: rem(200);
+	height: 100%;
 	background-color: $gray;
+	aspect-ratio: 16/10;
+
+	@media screen and (max-width: $max-700) {
+		max-width: none;
+		min-height: rem(150);
+		max-height: rem(300);
+	}
 }
 .about_card_info {
 	display: flex;
@@ -295,7 +456,6 @@ body {
 	font-size: rem(16);
 	font-weight: 400;
 	line-height: 1.3;
-	@include strings(7);
 }
 .hr_divider {
 	background-color: $green;
@@ -336,6 +496,25 @@ body {
 
 		& b {
 			font-size: rem(20);
+		}
+	}
+
+	@media screen and (max-width: $max-768) {
+		& p {
+			font-size: rem(20);
+		}
+		& b {
+			font-size: rem(20);
+		}
+
+		&.fz-20 {
+			& p {
+				font-size: rem(18);
+			}
+
+			& b {
+				font-size: rem(18);
+			}
 		}
 	}
 }
@@ -404,14 +583,19 @@ body {
 }
 .contacts_string {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	gap: rem(10);
+	flex-wrap: wrap;
 }
 .contacts_link {
 	font-size: rem(24);
 	color: $black;
 	font-weight: 600;
 	text-decoration: none;
+
+	@media screen and (max-width: $max-768) {
+		font-size: rem(18);
+	}
 
 	&:hover {
 		text-decoration: underline;
