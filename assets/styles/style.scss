@@ -14,6 +14,31 @@ $header-height: rem(120);
 html {
 	scroll-behavior: smooth;
 	scroll-padding-top: rem(140);
+
+	&::-webkit-scrollbar-track {
+		background: #f1f4f8;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: darken($green, 15%);
+		cursor: pointer;
+		-webkit-transition: 0.1s;
+		transition: 0.1s;
+
+		&:hover {
+			background: #7a7a7a;
+		}
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: #eee;
+		-webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+	}
+
+	&::-webkit-scrollbar {
+		width: 8px;
+		background-color: #eee;
+	}
 }
 body {
 	background-image: url('/assets/images/bg-pattern.svg');
@@ -416,7 +441,7 @@ body.blur {
 .about_card {
 	display: flex;
 	align-items: flex-start;
-	gap: rem(90);
+	gap: rem(60);
 
 	@media screen and (max-width: $max-900) {
 		gap: rem(60);
@@ -427,7 +452,7 @@ body.blur {
 	}
 }
 .about_card_img {
-	max-width: rem(260);
+	max-width: rem(290);
 	width: 100%;
 	-o-object-fit: cover;
 	object-fit: cover;
@@ -435,6 +460,13 @@ body.blur {
 	height: 100%;
 	background-color: $gray;
 	aspect-ratio: 16/10;
+	-o-object-position: top;
+	object-position: top;
+
+	&.center {
+		-o-object-position: center center;
+		object-position: center center;
+	}
 
 	@media screen and (max-width: $max-700) {
 		max-width: none;
@@ -446,9 +478,13 @@ body.blur {
 	display: flex;
 	flex-direction: column;
 	color: $black;
+
+	&.hidden {
+		@include strings(10);
+	}
 }
 .about_card_info_title {
-	font-size: rem(16);
+	font-size: rem(20);
 	font-weight: 600;
 	line-height: 1.3;
 }
@@ -456,6 +492,10 @@ body.blur {
 	font-size: rem(16);
 	font-weight: 400;
 	line-height: 1.3;
+
+	& b {
+		font-weight: 600;
+	}
 }
 .hr_divider {
 	background-color: $green;
